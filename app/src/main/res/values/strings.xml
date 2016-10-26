@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">RecyclerView</string>
+    <string name="action_add">➕</string>
+    <string name="action_remove">➖</string>
+    <string name="action_shuffle">❓</string>
     <string-array name="quotes">
         <item>Why end might ask civil again spoil.</item>
         <item>She dinner she our horses depend.</item>
