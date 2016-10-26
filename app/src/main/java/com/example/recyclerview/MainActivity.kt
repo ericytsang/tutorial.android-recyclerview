@@ -62,6 +62,16 @@ class MainActivity:AppCompatActivity()
 
         private val quotes:MutableList<String> = mutableListOf()
 
+        init
+        {
+            setHasStableIds(true)
+        }
+
+        override fun getItemId(position:Int):Long
+        {
+            return quotes[position].hashCode().toLong()
+        }
+
         override fun onBindViewHolder(holder:QuoteViewHolder,position:Int)
         {
             holder.model = quotes[position]
