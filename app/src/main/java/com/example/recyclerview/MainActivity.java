@@ -55,11 +55,23 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    class CustomAdapter extends RecyclerView.Adapter<QuoteViewHolder>
+    private class CustomAdapter extends RecyclerView.Adapter<QuoteViewHolder>
     {
         private String[] quotePool = getResources().getStringArray(R.array.quotes);
 
         private List<String> quotes = new ArrayList<>();
+
+        public CustomAdapter()
+        {
+            super();
+            setHasStableIds(true);
+        }
+
+        @Override
+        public long getItemId(int position)
+        {
+            return quotes.get(position).hashCode();
+        }
 
         @Override
         public QuoteViewHolder onCreateViewHolder(ViewGroup parent,int viewType)
